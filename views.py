@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template
-from . import app
+from . import app, message
 
 
 @app.route('/')
@@ -26,6 +26,11 @@ def hello_there(name=None):
         name=name,
         date=datetime.now()
     )
+
+
+@app.route('/messages/')
+def message(messages=None):
+    return render_template('messages.html')
 
 
 @app.route('/api/data')
