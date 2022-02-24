@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sites.css')}}" />
+    <title>Hello, Welcome</title>
+</head>
+<body>
+    {%if name %}
+            <span class="message">Hello there, {{ name }}!</span> It's {{ date.strftime("%A, %d %B, %Y at %X")
+}}.
+    {% else %}
+            What's your name? Provide it after /hello/ in the URL.
+    {% endif %}
+    
+    
+</body>
+</html>
