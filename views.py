@@ -32,6 +32,10 @@ def hello_there(name=None):
 def message(messages=None):
     return render_template('messages.html')
 
+@app.route('/create/', methods=['GET', 'POST'])
+def create():
+    return render_template('create.html')
+
 
 @app.route('/api/data')
 def get_data():
